@@ -221,7 +221,11 @@ inline int alphanum_comp(const char* l, const std::string& r) {
    implement "std::ostream operator<< (std::ostream&, const Ty&)".
 */
 template <class Ty>
-struct alphanum_less : public std::binary_function<Ty, Ty, bool> {
+struct alphanum_less
+#if __cplusplus < 201103
+    : public std::binary_function<Ty, Ty, bool>
+#endif
+{
     bool operator()(const Ty& left, const Ty& right) const { return alphanum_comp(left, right) < 0; }
 };
 
