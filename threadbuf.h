@@ -33,6 +33,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <array>
 
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
